@@ -1,0 +1,48 @@
+/* Style pour les lignes d'utilisateurs */
+.user-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-row label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-row input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Style pour le bouton Confirmer */
+input[type="submit"] {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0066b3;
+}
+
+/* Style pour le bouton Retour */
+.btn-back {
+    background-color: #fff;
+    color: #0077cc;
+    padding: 10px 20px;
+    border: 2px solid #0077cc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #0077cc;
+    color: #fff;
+}

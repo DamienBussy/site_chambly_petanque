@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7c9437d8-f361-47fa-ab4c-7fe3d20bb085" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\wamp64\www\cp" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost:7080/cp/index.php" />
+  <component name="ProjectId" id="2O3C9h6olLEmD0n0sCPw0XPh72F" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/cp/index.php&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\cp" />
+      <recent name="C:\wamp64\www\cp\Views\public" />
+      <recent name="C:\wamp64\www\cp\css\public" />
+      <recent name="C:\wamp64\www\cp\Views" />
+      <recent name="C:\wamp64\www\cp\Views\Admin\users" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.UserModel.php">
+    <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/cp/index.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="UserModel.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" editBeforeRun="true" activateToolWindowBeforeRun="false" path="$PROJECT_DIR$/index.php">
+      <method v="2">
+        <option name="LaunchBrowser.Before.Run" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c9437d8-f361-47fa-ab4c-7fe3d20bb085" name="Changes" comment="" />
+      <created>1680779729038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680779729038</updated>
+      <workItem from="1680779730146" duration="45000" />
+      <workItem from="1680779809577" duration="13907000" />
+      <workItem from="1680958404726" duration="4615000" />
+      <workItem from="1680963637833" duration="27430000" />
+      <workItem from="1681030351153" duration="34125000" />
+      <workItem from="1681311480671" duration="13742000" />
+      <workItem from="1681383798179" duration="5481000" />
+      <workItem from="1681408368723" duration="516000" />
+      <workItem from="1681414817217" duration="16799000" />
+      <workItem from="1681479523258" duration="28923000" />
+      <workItem from="1681589469300" duration="10276000" />
+      <workItem from="1681851508706" duration="14026000" />
+      <workItem from="1681986164708" duration="4139000" />
+      <workItem from="1682007271800" duration="1245000" />
+      <workItem from="1682011307204" duration="1040000" />
+      <workItem from="1682014297349" duration="1638000" />
+      <workItem from="1682026158557" duration="7275000" />
+      <workItem from="1682074617050" duration="964000" />
+      <workItem from="1682118081960" duration="593000" />
+      <workItem from="1682160181010" duration="7503000" />
+      <workItem from="1682181341234" duration="9577000" />
+      <workItem from="1682194660064" duration="7000" />
+      <workItem from="1682194861819" duration="692000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
