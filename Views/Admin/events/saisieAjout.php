@@ -21,7 +21,13 @@
     <input class="input-ajout-event" type="time" name="heureFin" id="heureFin"><br><br>
 
     <label class="label-ajout-event" for="categ">Catégorie :</label>
-    <input type="text" name="categ" id="categ"><br><br>
+    <select name="categ" id="categ">
+        <option value="0"></option>
+        <option value="1">Coupe de France Pétanque</option>
+        <option value="2">Coupe de France Jeu Provencal</option>
+        <option value="3">Championnat des clubs Pétanque</option>
+        <option value="4">Championnat des clubs Jeu Provencal</option>
+    </select><br><br>
 
     <input class="input-btn-ajouter" type="submit" value="Ajouter l'évènement">
 </form>

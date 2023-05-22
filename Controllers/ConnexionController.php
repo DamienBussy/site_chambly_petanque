@@ -36,7 +36,6 @@ class ConnexionController
             // On récupère le mot de passe de l'utilisateur "login" en bdd pour ensuite le comparer au mot de pass rentré dans le formulaire (avec password_verify)
             $hash = $this->user_model->GetHashPassword($login);
 //            $test = password_hash($password, PASSWORD_BCRYPT);
-//            die(var_dump($test));
             if(password_verify($password, $hash)){
                 $_SESSION['users']=$theUser;
                 $_SESSION['hauteurEcan']=$hauteurEcran;

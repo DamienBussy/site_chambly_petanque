@@ -20,7 +20,6 @@ else{
         $page="acc";
     }
     else{
-//        die(var_dump($_SESSION['users']->GetUserStatut() ));
         if($_SESSION['users']->getUserStatut() == "Président"){
             $page="men_menuAdmin";
         }
@@ -59,9 +58,21 @@ switch ($direction){
     case "evt":
         require_once "sousIndex/indexEvents.php";
     break;
+    case "res":
+        require_once "sousIndex/indexResultats.php";
+    break;
+    case "grp":
+        require_once "sousIndex/indexGrandPrix.php";
+    break;
+    case "lic":
+        require_once "sousIndex/indexLicencies.php";
+    break;
+    case "adh":
+        require_once "sousIndex/indexAdhesion.php";
+    break;
 
     // ------------------------------------------------ PUBLIC ----------------------------------------------
     case "tmp":
-        require_once "Views/public/accueil.php";
+        require_once "indexpublic.php";
     break;
 }

@@ -6,6 +6,7 @@
         <button class="button-ajout-users button-espace" type="submit" name="page" value="usr_saisieAjout"><span>Ajouter un utilisateur</span></button>
     </form>
 </div>
+<br>
 <table class="table-users">
     <thead class="th-users">
     <tr>

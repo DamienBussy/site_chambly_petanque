@@ -104,6 +104,9 @@
     border: 1px solid #ddd;
     padding: 10px;
 }
+.tr-annee {
+    background-color: coral;
+}
 
 /* Style pour le bouton Ajouter */
 .button-ajout-users {

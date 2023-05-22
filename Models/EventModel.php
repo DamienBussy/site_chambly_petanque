@@ -79,14 +79,14 @@ class EventModel extends DatabaseModel
         $image = $event->getEventImagePrincipale();
         $categ = $event->getEventCategorie();
         $stmt->bindParam('id', $id);
-        $stmt->binParam(':title', $title);
-        $stmt->binParam(':desc', $desc);
-        $stmt->binParam(':date', $date);
-        $stmt->binParam(':lieu', $lieu);
-        $stmt->binParam(':heureD', $heureD);
-        $stmt->binParam(':heureF', $heureF);
-        $stmt->binParam(':image', $image);
-        $stmt->binParam(':categ', $categ);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':desc', $desc);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':lieu', $lieu);
+        $stmt->bindParam(':heureD', $heureD);
+        $stmt->bindParam(':heureF', $heureF);
+        $stmt->bindParam(':image', $image);
+        $stmt->bindParam(':categ', $categ);
         $stmt->execute();
         $this->Deconnexion();
     }
@@ -121,5 +121,23 @@ class EventModel extends DatabaseModel
         $stmt->bindParam('img', $id);
         $stmt->bindParam('id', $id_event);
         $stmt->execute();
+        $this->Deconnexion();
+    }
+
+    // Recherche d'un evenement A VENIR pour une catégorie
+    public function GetEventFuturByCategorie($id){
+        $listeEvents=array();
+        $this->Connexion();
+        $req="select * from events where event_categorie=:id and event_date > NOW()";
+        $stmt=$this->GetDb()->prepare($req);
+        $stmt->bindParam('id', $id);
+        $stmt->execute();
+        $line=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach($line as $event){
+            $theEvent = new Event($event['event_id'], $event['event_title'], $event['event_description'], $event['event_date'], $event['event_lieu'], $event['event_heureDebut'], $event['event_heureFin'], $event['event_imagePrincipale'], $event['event_categorie']);
+            $listeEvents[] = $theEvent;
+        }
+        $this->Deconnexion();
+        return $listeEvents;
     }
 }

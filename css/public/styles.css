@@ -1,4 +1,4 @@
-/* =================================================================== 
+/* ===================================================================
  * Calvin Main Stylesheet
  * Template Ver. 1.0.0
  * 10-07-2020
@@ -24,7 +24,7 @@
  *  # block grids
  *      ## block grids - medium screen devices
  *      ## block grids - tablets
- *      ## block grids - mobile devices 
+ *      ## block grids - mobile devices
  *      ## block grids - small mobile devices <= 400px
  *  # MISC
  *  # custom grid, block grid STACK breakpoints
@@ -40,7 +40,7 @@
  *      ## page loaded
  *  # forms
  *      ## style placeholder text
- *      ## change autocomplete styles in Chrome 
+ *      ## change autocomplete styles in Chrome
  *  # buttons
  *  # additional components
  *      ## additional typo styles
@@ -72,7 +72,7 @@
  *      ## footer bottom
  *      ## go top
  *  # blog styles and blog components
- *      ## blog comments 
+ *      ## blog comments
  *
  * ------------------------------------------------------------------ */
 
@@ -82,7 +82,7 @@
  *
  * ------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## fonts
  * ------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text&family=Inter:wght@300;400;500;600;700&display=swap");
@@ -97,7 +97,7 @@
     --font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## colors
  * ------------------------------------------------------------------- */
 :root {
@@ -120,7 +120,7 @@
     --color-2-darker : hsla(358, 65%, 26%, 1);
 
     /* feedback colors
-     * color-error(#ffd1d2), color-success(#c8e675), 
+     * color-error(#ffd1d2), color-success(#c8e675),
      * color-info(#d7ecfb), color-notice(#fff099)
      */
     --color-error          : hsla(359, 100%, 91%, 1);
@@ -132,9 +132,9 @@
     --color-info-content   : hsla(205, 32%, 31%, 1);
     --color-notice-content : hsla(51, 30%, 30%, 1);
 
-    /* shades 
-     * generated using 
-     * Tint & Shade Generator 
+    /* shades
+     * generated using
+     * Tint & Shade Generator
      * (https://maketintsandshades.com/)
      */
     --color-black  : #000000;
@@ -187,20 +187,20 @@
     --color-border: #eeeeee;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## vertical spacing and typescale
  * ------------------------------------------------------------------- */
 :root {
 
     /* spacing
-     * base font size: 18px 
+     * base font size: 18px
      * vertical space unit : 32px
      */
     --base-size: 62.5%;
     --base-font-size: 1.8rem;
     --space: 3.2rem;
 
-    /* vertical spacing 
+    /* vertical spacing
      */
     --vspace-0_125: calc(0.125 * var(--space));
     --vspace-0_25 : calc(0.25 * var(--space));
@@ -264,7 +264,7 @@
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## grid variables
  * ------------------------------------------------------------------- */
 :root {
@@ -295,7 +295,7 @@
  *
  * -------------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## document
  * ------------------------------------------------------------------- */
 
@@ -317,7 +317,7 @@ html {
     /* 2 */
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## sections
  * ------------------------------------------------------------------- */
 
@@ -341,7 +341,7 @@ h1 {
     margin: 0.67em 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## grouping
  * ------------------------------------------------------------------- */
 
@@ -368,7 +368,7 @@ pre {
     /* 2 */
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## text-level semantics
  * ------------------------------------------------------------------- */
 
@@ -432,7 +432,7 @@ sup {
     top: -0.5em;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## embedded content
  * ------------------------------------------------------------------- */
 
@@ -442,7 +442,7 @@ img {
     border-style: none;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## forms
  * ------------------------------------------------------------------- */
 
@@ -577,7 +577,7 @@ textarea {
     /* 2 */
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## interactive
  * ------------------------------------------------------------------- */
 
@@ -593,7 +593,7 @@ summary {
     display: list-item;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## misc
  * ------------------------------------------------------------------- */
 
@@ -636,7 +636,7 @@ body {
     -webkit-text-size-adjust: none;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## media
  * ------------------------------------------------------------------- */
 svg, img, video embed, iframe, object {
@@ -644,7 +644,7 @@ svg, img, video embed, iframe, object {
     height: auto;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## typography resets
  * ------------------------------------------------------------------- */
 div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
@@ -680,7 +680,7 @@ li {
     display: block;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## links
  * ------------------------------------------------------------------- */
 a {
@@ -692,7 +692,7 @@ a img {
     border: none;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## inputs
  * ------------------------------------------------------------------- */
 fieldset {
@@ -700,13 +700,13 @@ fieldset {
     padding: 0;
 }
 
-input[type="email"], 
-input[type="number"], 
-input[type="search"], 
-input[type="text"], 
-input[type="tel"], 
-input[type="url"], 
-input[type="password"], 
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
 textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -718,9 +718,9 @@ textarea {
  * # Grid v3.0.0
  *
  *   -----------------------------------------------------------------
- * - Grid breakpoints are based on MAXIMUM WIDTH media queries, 
+ * - Grid breakpoints are based on MAXIMUM WIDTH media queries,
  *   meaning they apply to that one breakpoint and ALL THOSE BELOW IT.
- * - Grid columns without a specified width will automatically layout 
+ * - Grid columns without a specified width will automatically layout
  *   as equal width columns.
  * ------------------------------------------------------------------- */
 
@@ -877,7 +877,7 @@ textarea {
     align-self: flex-end;
 }
 
-/* large screen column widths 
+/* large screen column widths
  */
 .large-1 {
     -ms-flex: 0 0 8.33333%;
@@ -963,7 +963,7 @@ textarea {
     max-width: 100%;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## medium screen devices
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
@@ -1048,7 +1048,7 @@ textarea {
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## tablets
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
@@ -1132,7 +1132,7 @@ textarea {
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## mobile devices
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
@@ -1227,7 +1227,7 @@ textarea {
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## small mobile devices <= 400px
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 400px) {
@@ -1305,7 +1305,7 @@ textarea {
     max-width: 100%;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## block grids - medium screen devices
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 1200px) {
@@ -1353,7 +1353,7 @@ textarea {
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## block grids - tablets
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
@@ -1401,8 +1401,8 @@ textarea {
     }
 }
 
-/* ------------------------------------------------------------------- 
- * ## block grids - mobile devices 
+/* -------------------------------------------------------------------
+ * ## block grids - mobile devices
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
     .block-mob-1-8>.column {
@@ -1449,7 +1449,7 @@ textarea {
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## block grids - small mobile devices <= 400px
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 400px) {
@@ -1608,7 +1608,7 @@ body {
     padding: 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## links
  * ------------------------------------------------------------------- */
 a {
@@ -1627,7 +1627,7 @@ a:hover, a:active {
 
 /* ===================================================================
  * # typography & general theme styles
- * 
+ *
  * ------------------------------------------------------------------- */
 
 /* type scale - ratio 1:2 | base: 18px
@@ -1793,8 +1793,8 @@ blockquote cite:before {
     content: "\2014 \0020";
 }
 
-blockquote cite, 
-blockquote cite a, 
+blockquote cite,
+blockquote cite a,
 blockquote cite a:visited {
     color: var(--color-text-light);
     border: none;
@@ -1890,7 +1890,7 @@ hr.fancy::before {
     letter-spacing: .3em;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## lists
  * ------------------------------------------------------------------- */
 ol {
@@ -1946,7 +1946,7 @@ dd {
     margin: 0 0 0 2rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## responsive video container
  * ------------------------------------------------------------------- */
 .video-container {
@@ -1956,9 +1956,9 @@ dd {
     overflow: hidden;
 }
 
-.video-container iframe, 
-.video-container object, 
-.video-container embed, 
+.video-container iframe,
+.video-container object,
+.video-container embed,
 .video-container video {
     position: absolute;
     top: 0;
@@ -1967,7 +1967,7 @@ dd {
     height: 100%;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## floated image
  * ------------------------------------------------------------------- */
 img.h-pull-right {
@@ -1978,7 +1978,7 @@ img.h-pull-left {
     margin: var(--vspace-0_5) 2.8rem var(--vspace-0_5) 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## tables
  * ------------------------------------------------------------------- */
 
@@ -2016,34 +2016,34 @@ th:last-child, td:last-child {
     -webkit-overflow-scrolling: touch;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## spacing
  * ------------------------------------------------------------------- */
 fieldset, button, .btn {
     margin-bottom: var(--vspace-0_5);
 }
 
-input, 
-textarea, 
-select, 
-pre, 
-blockquote, 
-figure, 
-figcaption, 
-table, 
-p, 
-ul, 
-ol, 
-dl, 
-form, 
-img, 
-.video-container, 
+input,
+textarea,
+select,
+pre,
+blockquote,
+figure,
+figcaption,
+table,
+p,
+ul,
+ol,
+dl,
+form,
+img,
+.video-container,
 .ss-custom-select {
     margin-bottom: var(--vspace-1);
 }
 
 
-/* =================================================================== 
+/* ===================================================================
  * # preloader
  *
  * ------------------------------------------------------------------- */
@@ -2119,7 +2119,7 @@ img,
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## page loaded
  * ------------------------------------------------------------------- */
 .ss-loaded #preloader {
@@ -2144,14 +2144,14 @@ fieldset {
     border: none;
 }
 
-input[type="email"], 
-input[type="number"], 
-input[type="search"], 
-input[type="text"], 
-input[type="tel"], 
-input[type="url"], 
-input[type="password"], 
-textarea, 
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
 select {
     --input-height: var(--vspace-2);
     --input-line-height: var(--vspace-1);
@@ -2221,14 +2221,14 @@ textarea {
     min-height: 25.6rem;
 }
 
-input[type="email"]:focus, 
-input[type="number"]:focus, 
-input[type="search"]:focus, 
-input[type="text"]:focus, 
-input[type="tel"]:focus, 
-input[type="url"]:focus, 
-input[type="password"]:focus, 
-textarea:focus, 
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
 select:focus {
     color: var(--color-black);
     border-bottom: 2px solid var(--color-black);
@@ -2261,7 +2261,7 @@ label>input[type="checkbox"], label>input[type="radio"] {
     top: .2rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## style placeholder text
  * ------------------------------------------------------------------- */
 ::-webkit-input-placeholder {
@@ -2288,16 +2288,16 @@ label>input[type="checkbox"], label>input[type="radio"] {
     color: var(--color-placeholder) !important;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## change autocomplete styles in Chrome
  * ------------------------------------------------------------------- */
-input:-webkit-autofill, 
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus input:-webkit-autofill, 
-textarea:-webkit-autofill, 
-textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus, 
-select:-webkit-autofill, 
-select:-webkit-autofill:hover, 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--color-1);
     -webkit-transition: background-color 5000s ease-in-out 0s;
@@ -2309,10 +2309,10 @@ select:-webkit-autofill:focus {
  * # buttons
  *
  * ------------------------------------------------------------------- */
-.btn, 
-button, 
-input[type="submit"], 
-input[type="reset"], 
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
 input[type="button"] {
     --btn-height: var(--vspace-btn);
     display: inline-block;
@@ -2338,14 +2338,14 @@ input[type="button"] {
     border: 0.2rem solid var(--color-btn);
 }
 
-.btn:hover, 
-button:hover, 
-input[type="submit"]:hover, 
-input[type="reset"]:hover, 
-input[type="button"]:hover, 
-.btn:focus, button:focus, 
-input[type="submit"]:focus, 
-input[type="reset"]:focus, 
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.btn:focus, button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
 input[type="button"]:focus {
     background-color: var(--color-btn-hover);
     border-color: var(--color-btn-hover);
@@ -2355,25 +2355,25 @@ input[type="button"]:focus {
 
 /* button primary
  * ------------------------------------------------- */
-.btn.btn--primary, 
-button.btn--primary, 
-input[type="submit"].btn--primary, 
-input[type="reset"].btn--primary, 
+.btn.btn--primary,
+button.btn--primary,
+input[type="submit"].btn--primary,
+input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
     background: var(--color-btn-primary);
     border-color: var(--color-btn-primary);
     color: var(--color-btn-primary-text);
 }
 
-.btn.btn--primary:hover, 
-button.btn--primary:hover, 
-input[type="submit"].btn--primary:hover, 
-input[type="reset"].btn--primary:hover, 
-input[type="button"].btn--primary:hover, 
-.btn.btn--primary:focus, 
-button.btn--primary:focus, 
-input[type="submit"].btn--primary:focus, 
-input[type="reset"].btn--primary:focus, 
+.btn.btn--primary:hover,
+button.btn--primary:hover,
+input[type="submit"].btn--primary:hover,
+input[type="reset"].btn--primary:hover,
+input[type="button"].btn--primary:hover,
+.btn.btn--primary:focus,
+button.btn--primary:focus,
+input[type="submit"].btn--primary:focus,
+input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
     background: var(--color-btn-primary-hover);
     border-color: var(--color-btn-primary-hover);
@@ -2423,12 +2423,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 
-/* =================================================================== 
+/* ===================================================================
  * # additional components
  *
  * ------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## additional typo styles
  * ------------------------------------------------------------------- */
 .drop-cap:first-letter {
@@ -2443,7 +2443,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-text-dark);
 }
 
-/* line definition style 
+/* line definition style
  * ----------------------------------------------- */
 .lining dt, .lining dd {
     display: inline;
@@ -2468,7 +2468,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     margin-left: -0.2em;
 }
 
-/* dictionary definition style 
+/* dictionary definition style
  * ----------------------------------------------- */
 .dictionary-style dt {
     display: inline;
@@ -2489,7 +2489,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     content: counter(definitions, decimal) ". ";
 }
 
-/** 
+/**
  * Pull Quotes
  * -----------
  * markup:
@@ -2539,7 +2539,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     left: 50%;
 }
 
-/** 
+/**
  * Stats Tab
  * ---------
  * markup:
@@ -2594,7 +2594,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-text-light);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## skillbars
  * ------------------------------------------------------------------- */
 .skill-bars {
@@ -2717,7 +2717,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     width: 100%;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## alert box
  * ------------------------------------------------------------------- */
 .alert-box {
@@ -2743,7 +2743,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     height: 12px;
 }
 
-.alert-box__close::before, 
+.alert-box__close::before,
 .alert-box__close::after {
     content: '';
     position: absolute;
@@ -2769,7 +2769,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-error-content);
 }
 
-.alert-box--error .alert-box__close::before, 
+.alert-box--error .alert-box__close::before,
 .alert-box--error .alert-box__close::after {
     background-color: var(--color-error-content);
 }
@@ -2779,7 +2779,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-success-content);
 }
 
-.alert-box--success .alert-box__close::before, 
+.alert-box--success .alert-box__close::before,
 .alert-box--success .alert-box__close::after {
     background-color: var(--color-success-content);
 }
@@ -2789,7 +2789,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-info-content);
 }
 
-.alert-box--info .alert-box__close::before, 
+.alert-box--info .alert-box__close::before,
 .alert-box--info .alert-box__close::after {
     background-color: var(--color-info-content);
 }
@@ -2799,7 +2799,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-notice-content);
 }
 
-.alert-box--notice .alert-box__close::before, 
+.alert-box--notice .alert-box__close::before,
 .alert-box--notice .alert-box__close::after {
     background-color: var(--color-notice-content);
 }
@@ -2895,15 +2895,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: white;
 }
 
-.pgn .disabled, 
-.pgn .inactive, 
+.pgn .disabled,
+.pgn .inactive,
 .pgn .inactive:hover {
     opacity: 0.4;
     cursor: default;
 }
 
-.pgn .disabled::after, 
-.pgn .inactive::after, 
+.pgn .disabled::after,
+.pgn .inactive::after,
 .pgn .inactive:hover::after {
     display: none;
 }
@@ -2944,7 +2944,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: black;
 }
 
-.pgn__prev:hover::after, 
+.pgn__prev:hover::after,
 .pgn__next:hover::after {
     width: 100%;
 }
@@ -2956,14 +2956,14 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transition: all, .3s, ease-in-out;
 }
 
-.pgn__prev svg path, 
+.pgn__prev svg path,
 .pgn__next svg path {
     fill: var(--color-text-dark);
 }
 
-.pgn__prev:hover svg path, 
-.pgn__prev:focus svg path, 
-.pgn__next:hover svg path, 
+.pgn__prev:hover svg path,
+.pgn__prev:focus svg path,
+.pgn__next:hover svg path,
 .pgn__next:focus svg path {
     fill: white;
 }
@@ -2976,18 +2976,18 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     right: 0;
 }
 
-.pgn__prev.inactive, 
+.pgn__prev.inactive,
 .pgn__next.inactive {
     opacity: 0.4;
     cursor: default;
 }
 
-.pgn__prev.inactive:hover, 
+.pgn__prev.inactive:hover,
 .pgn__next.inactive:hover {
     background-color: transparent;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * responsive:
  * pagination
  * ------------------------------------------------------------------- */
@@ -3019,7 +3019,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     top: 2rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## animation stuff
  * ------------------------------------------------------------------- */
 .animate-this {
@@ -3027,7 +3027,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     visibility: hidden;
 }
 
-.no-js .animate-this, 
+.no-js .animate-this,
 .no-cssanimations .animate-this {
     opacity: 1;
     visibility: visible;
@@ -3076,7 +3076,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     }
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## close button for search & mobile nav
  * ------------------------------------------------------------------- */
 .s-header__overlay-close {
@@ -3099,7 +3099,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transform: scale(1);
 }
 
-.s-header__overlay-close::before, 
+.s-header__overlay-close::before,
 .s-header__overlay-close::after {
     content: '';
     display: inline-block;
@@ -3121,7 +3121,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transform: rotate(-45deg);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## bricks masonry
  * ------------------------------------------------------------------- */
 .s-bricks {
@@ -3194,8 +3194,8 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     border-top: 1px solid var(--color-border);
 }
 
-/* ------------------------------------------------------------------- 
- * ## masonry entries 
+/* -------------------------------------------------------------------
+ * ## masonry entries
  * ------------------------------------------------------------------- */
 .bricks-wrapper .entry__thumb {
     overflow: hidden;
@@ -3279,12 +3279,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     margin-bottom: calc(0.375 * var(--space));
 }
 
-.bricks-wrapper .entry__title a, 
+.bricks-wrapper .entry__title a,
 .bricks-wrapper .entry__title a:visited {
     color: black;
 }
 
-.bricks-wrapper .entry__title a:hover, 
+.bricks-wrapper .entry__title a:hover,
 .bricks-wrapper .entry__title a:focus {
     color: rgba(0, 0, 0, 0.8);
 }
@@ -3301,12 +3301,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: var(--color-text-light);
 }
 
-.bricks-wrapper .entry__meta a:focus, 
+.bricks-wrapper .entry__meta a:focus,
 .bricks-wrapper .entry__meta a:hover {
     color: black;
 }
 
-.bricks-wrapper .entry__meta .byline, 
+.bricks-wrapper .entry__meta .byline,
 .bricks-wrapper .entry__meta .cat-links {
     display: inline-block;
 }
@@ -3341,12 +3341,12 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     border-bottom: 1px solid transparent;
 }
 
-.bricks-wrapper .entry__more-link:hover, 
+.bricks-wrapper .entry__more-link:hover,
 .bricks-wrapper .entry__more-link:focus {
     border-bottom: 1px solid black;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * responsive:
  * common and reusable styles
  * ------------------------------------------------------------------- */
@@ -3439,7 +3439,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     --logo-width: 96px;
     --logo-height: 24px;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.63);
     width: 100%;
     height: var(--header-height);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -3515,7 +3515,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     text-align: center;
 }
 
-.s-header__nav-wrap .s-header__nav-heading, 
+.s-header__nav-wrap .s-header__nav-heading,
 .s-header__nav-wrap .close-mobile-menu {
     display: none;
 }
@@ -3640,7 +3640,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transform: translate3d(0, 0, 0);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## header-toggle
  * ------------------------------------------------------------------- */
 .s-header__toggle-menu {
@@ -3670,7 +3670,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     left: auto;
 }
 
-.s-header__toggle-menu span::before, 
+.s-header__toggle-menu span::before,
 .s-header__toggle-menu span::after {
     content: '';
     width: 100%;
@@ -3688,7 +3688,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     bottom: -10px;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## header-search
  * ------------------------------------------------------------------- */
 .s-header__search {
@@ -3756,9 +3756,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     margin: 0;
 }
 
-.s-header__search-form input[type="search"]::-webkit-search-decoration, 
-.s-header__search-form input[type="search"]::-webkit-search-cancel-button, 
-.s-header__search-form input[type="search"]::-webkit-search-results-button, 
+.s-header__search-form input[type="search"]::-webkit-search-decoration,
+.s-header__search-form input[type="search"]::-webkit-search-cancel-button,
+.s-header__search-form input[type="search"]::-webkit-search-results-button,
 .s-header__search-form input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
 }
@@ -3844,7 +3844,7 @@ body.search-is-visible {
     fill: white;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * responsive:
  * header
  * ------------------------------------------------------------------- */
@@ -3861,7 +3861,7 @@ body.search-is-visible {
 }
 
 @media screen and (min-width: 901px) {
-    .s-header__nav li.has-children:hover>a::after, 
+    .s-header__nav li.has-children:hover>a::after,
     .s-header__nav li.has-children:focus>a::after {
         -webkit-transform: rotate(225deg);
         transform: rotate(225deg);
@@ -3892,7 +3892,7 @@ body.search-is-visible {
         border: none;
         overflow-y: auto;
     }
-    .s-header__nav-wrap .s-header__nav-heading, 
+    .s-header__nav-wrap .s-header__nav-heading,
     .s-header__nav-wrap .close-mobile-menu {
         display: block;
     }
@@ -4212,7 +4212,7 @@ body.search-is-visible {
     color: white;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## hero social
  * ------------------------------------------------------------------- */
 .s-hero__social {
@@ -4269,7 +4269,7 @@ body.search-is-visible {
     transform: scale(1);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## hero slider nav arrows
  * ------------------------------------------------------------------- */
 .s-hero__nav-arrows {
@@ -4309,18 +4309,18 @@ body.search-is-visible {
     fill: black;
 }
 
-.s-hero__nav-arrows button:hover, 
+.s-hero__nav-arrows button:hover,
 .s-hero__nav-arrows button:focus {
     background-color: black;
     border-color: black;
 }
 
-.s-hero__nav-arrows button:hover svg path, 
+.s-hero__nav-arrows button:hover svg path,
 .s-hero__nav-arrows button:focus svg path {
     fill: white;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * responsive:
  * hero
  * ------------------------------------------------------------------- */
@@ -4475,7 +4475,7 @@ body.search-is-visible {
     margin-top: var(--vspace-2);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## pageheader
  * ------------------------------------------------------------------- */
 .s-pageheader {
@@ -4502,7 +4502,7 @@ body.search-is-visible {
     color: var(--color-text-light);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## content media
  * ------------------------------------------------------------------- */
 .s-content__media {
@@ -4516,7 +4516,7 @@ body.search-is-visible {
     margin-bottom: 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## content entry header
  * ------------------------------------------------------------------- */
 .s-content__entry-header {
@@ -4530,7 +4530,7 @@ body.search-is-visible {
     text-align: center;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## content primary
  * ------------------------------------------------------------------- */
 .s-content__primary {
@@ -4592,12 +4592,12 @@ body.search-is-visible {
     color: var(--color-text);
 }
 
-.s-content__entry-meta a:focus, 
+.s-content__entry-meta a:focus,
 .s-content__entry-meta a:hover {
     color: black;
 }
 
-.s-content__entry-meta .byline span, 
+.s-content__entry-meta .byline span,
 .s-content__entry-meta .meta-blk span {
     font-size: calc(var(--text-size) * 0.6111);
     font-weight: 600;
@@ -4607,7 +4607,7 @@ body.search-is-visible {
     color: black;
 }
 
-.s-content__entry-meta .bytext, 
+.s-content__entry-meta .bytext,
 .s-content__entry-meta .tagtext {
     display: block;
 }
@@ -4654,7 +4654,7 @@ body.search-is-visible {
     color: var(--color-text-light);
 }
 
-.s-content__pagenav a:hover, 
+.s-content__pagenav a:hover,
 .s-content__pagenav a:focus {
     color: black;
 }
@@ -4670,7 +4670,7 @@ body.search-is-visible {
     margin-bottom: var(--vspace-0_5);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * responsive:
  * content
  * ------------------------------------------------------------------- */
@@ -4855,7 +4855,7 @@ body.search-is-visible {
     padding-left: 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## footer main
  * ------------------------------------------------------------------- */
 .s-footer__main {
@@ -4921,7 +4921,7 @@ body.search-is-visible {
     margin-right: .4rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## footer bottom
  * ------------------------------------------------------------------- */
 
@@ -4948,7 +4948,7 @@ body.search-is-visible {
     display: none;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## go top
  * ------------------------------------------------------------------- */
 .ss-go-top {
@@ -5053,7 +5053,7 @@ body.search-is-visible {
  * ------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------
- * ## blog comments 
+ * ## blog comments
  * ------------------------------------------------------------------- */
 .comments-wrap {
     padding-bottom: var(--vspace-4);
@@ -5182,7 +5182,7 @@ body.search-is-visible {
     padding-top: var(--vspace-1_75);
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * responsive:
  * comments
  * ------------------------------------------------------------------- */

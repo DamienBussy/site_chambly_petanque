@@ -47,6 +47,28 @@ class EventController
         $this->AfficherTousLesEvents();
     }
 
+    public function SaisieModifierEvent($id_event){
+        $theEvent=$this->event_model->GetEvent($id_event);
+        $this->data['id_event']=$id_event;
+        $this->data['title']=$theEvent->getEventTitle();
+        $this->data['desc']=$theEvent->getEventDescription();
+        $this->data['date']=$theEvent->getEventDate();
+        $this->data['lieu']=$theEvent->getEventLieu();
+        $this->data['heureDebut']=$theEvent->getEventHeureDebut();
+        $this->data['heureFin']=$theEvent->getEventHeureFin();
+        $this->data['categ']=$theEvent->getEventCategorie();
+
+        require_once "Views/Admin/events/saisieModif.php";
+
+    }
+
+    public function ModifierEvent($id, $event_title, $event_description, $event_date, $event_lieu, $event_heureDebut, $event_heureFin, $event_categorie){
+        $theEvent = new Event($id, $event_title, $event_description, $event_date, $event_lieu, $event_heureDebut, $event_heureFin, null, $event_categorie);
+        $this->event_model->Modifier($theEvent);
+
+        $this->AfficherTousLesEvents();
+    }
+
     public function SupprimerEvent($id){
         $this->event_model->Supprimer($id);
         header("Location: index.php?page=evt_getAllEvents");
@@ -105,4 +127,15 @@ class EventController
 
         require_once "Views/public/events.php";
     }
+
+    public function AfficherEventDetailPublic($id){
+        $theEvent = $this->event_model->GetEvent($id);
+        if(!is_null($theEvent->getEventImagePrincipale())){
+            $theEvent->setPathImagePrincipale($this->image_model->getImagePrincipaleEvent($theEvent->getEventImagePrincipale())->getImagePath());
+        }
+        $this->data['theEvent']=$theEvent;
+        require_once "Views/public/eventdetails.php";
+    }
+
+
 }

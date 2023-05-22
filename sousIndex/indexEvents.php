@@ -19,6 +19,16 @@ switch ($action) {
         $controller = new EventController();
         $controller->AjouterEvent($_POST['title'], $_POST['desc'], $_POST['date'], $_POST['lieu'], $_POST['heureDebut'], $_POST['heureFin'], $_POST['categ']);
     break;
+    case "saisieModifier":
+        require_once "Controllers/Admin/EventController.php";
+        $controller = new EventController();
+        $controller->SaisieModifierEvent($_POST['id_event']);
+    break;
+    case "modifier":
+        require_once "Controllers/Admin/EventController.php";
+        $controller = new EventController();
+        $controller->ModifierEvent($_POST['id_event'], $_POST['title'], $_POST['desc'], $_POST['date'], $_POST['lieu'], $_POST['heureDebut'], $_POST['heureFin'], $_POST['categ']);
+        break;
     case "delete":
         require_once "Controllers/Admin/EventController.php";
         $controller = new EventController();

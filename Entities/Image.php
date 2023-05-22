@@ -5,11 +5,13 @@ class Image
     private $image_id;
     private $image_path;
     private $event_id;
+    private $resultat_id;
 
-    public function __construct($id, $path, $eventID){
+    public function __construct($id, $path, $eventID, $resultatID){
         $this->image_id=$id;
         $this->image_path=$path;
         $this->event_id=$eventID;
+        $this->resultat_id=$resultatID;
     }
 
     /**
@@ -58,6 +60,22 @@ class Image
     public function setEventId($event_id)
     {
         $this->event_id = $event_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResultatId()
+    {
+        return $this->resultat_id;
+    }
+
+    /**
+     * @param mixed $resultat_id
+     */
+    public function setResultatId($resultat_id)
+    {
+        $this->resultat_id = $resultat_id;
     }
 
 

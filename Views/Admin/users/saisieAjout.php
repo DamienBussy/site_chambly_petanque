@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./css/users/styleSaisieAjout.css">
 <form action="index.php" method="POST">
-    <input type="hidden" name="page" value="add_user">
+<!--    <input type="hidden" name="page" value="add_user">-->
     <label for="lastname">Nom :</label>
     <input type="text" name="lastname" required>
     <br>

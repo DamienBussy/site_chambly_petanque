@@ -1,4 +1,4 @@
-<?php require_once "menu.php"?>
+<?php require_once "Views/menu.php"?>
 <head><link rel="stylesheet" type="text/css" href="css/styleConnexion.css"></head>
 <br>
 <div>
