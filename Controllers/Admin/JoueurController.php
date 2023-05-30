@@ -29,7 +29,8 @@ class JoueurController
 
     public function CreateAccount($nom, $prenom, $login, $password){
         if($this->joueur_model->loginEstUnDoublonCreate($login)){
-
+            $this->data['messageError']="Ce login est déjà utilisé.";
+            require_once "Views/public/joueurs/createAccount.php";
         }else{
             if($_FILES['joueur_photo']['name'] != ''){
                 $photo = "resources/joueurs/" . $_FILES['joueur_photo']['name'];
@@ -59,10 +60,9 @@ class JoueurController
 
     public function SeConnecter($login, $password){
         $theJoueur=$this->joueur_model->GetJoueurByLogin($login);
-        var_dump('toto');
         if(is_null($theJoueur)){
-            $this->data['message']="Utilisateur inconnu.";
-            require_once "Views/public/joueurs/connexion_errorView.php";
+            $this->data['messageError']="Utilisateur inconnu.";
+            require_once "Views/public/joueurs/connexion.php";
         }
         else{
             // On récupère le mot de passe de l'utilisateur "login" en bdd pour ensuite le comparer au mot de pass rentré dans le formulaire (avec password_verify)
@@ -73,65 +73,72 @@ class JoueurController
                 $_SESSION['joueurs']=$theJoueur;
                 header("Location: indexpublic.php?page=jou_joueurconnecte&session=".$theJoueur->getJoueurId());
             } else{
-                var_dump('toto');
-                $this->data['message']="Votre mot de passe est incorrecte.";
-                require_once "Views/public/joueurs/connexion_errorView.php";
+                $this->data['messageError']="Votre mot de passe est incorrecte.";
+                require_once "Views/public/joueurs/connexion.php";
             }
         }
     }
 
     public function ModifierJoueurSansModifPhoto($id, $nom, $prenom, $login, $passwordActuel, $password, $passwordConfirm){
-        $photo=$this->joueur_model->GetJoueur($id)->getJoueurPhoto();
-        $theJoueur=new Joueur($id, $nom, $prenom, $login, $photo);
-        if(empty($passwordActuel)){
-            $this->joueur_model->Modifier($theJoueur);
-//            $this->data['joueur']=$theJoueur;
-            $this->AfficherTableauBordJoueurConnecte($id);
-        } else{
-            $hash = $this->joueur_model->GetHashPassword($theJoueur->getJoueurLogin());
-            if(password_verify($passwordActuel, $hash)){
-                if($password==$passwordConfirm){
-                    $this->joueur_model->ModifierWithPassword($theJoueur, $password);
-                }
-                else{
-                    $this->data['error']="Vous n'avez pas mis les même mots de passe.";
+        if($this->joueur_model->loginEstUnDoublonModif($login, $id)){
+            $this->data['error']="Ce login est déjà utilisé.";
+            $this->AfficherSaisieModifierJoueur($id);
+        }else{
+            $photo=$this->joueur_model->GetJoueur($id)->getJoueurPhoto();
+            $theJoueur=new Joueur($id, $nom, $prenom, $login, $photo);
+            if(empty($passwordActuel)){
+                $this->joueur_model->Modifier($theJoueur);
+                $this->AfficherTableauBordJoueurConnecte($id);
+            } else{
+                $hash = $this->joueur_model->GetHashPassword($theJoueur->getJoueurLogin());
+                if(password_verify($passwordActuel, $hash)){
+                    if($password==$passwordConfirm){
+                        $this->joueur_model->ModifierWithPassword($theJoueur, $password);
+                    }
+                    else{
+                        $this->data['error']="Vous n'avez pas mis les même mots de passe.";
+                        $this->AfficherSaisieModifierJoueur($id);
+                    }
+                } else{
+                    $this->data['error']="Le mot de passe n'est pas bon.";
                     $this->AfficherSaisieModifierJoueur($id);
                 }
-            } else{
-                $this->data['error']="Le mot de passe n'est pas bon.";
-                $this->AfficherSaisieModifierJoueur($id);
             }
         }
+
     }
     public function ModifierJoueur($id, $nom, $prenom, $login, $passwordActuel, $password, $passwordConfirm){
-        if($_FILES['joueur_photo']['name'] != ''){
-            $photo = "resources/comptes/" . $_FILES['joueur_photo']['name'];
+        if($this->joueur_model->loginEstUnDoublonModif($login, $id)){
+            $this->data['error']="Ce login est déjà utilisé.";
+            $this->AfficherSaisieModifierJoueur($id);
         }else{
-            $photo=null;
-        }
-        $theJoueur=new Joueur($id, $nom, $prenom, $login, $photo);
-        $this->uploadPhotoJoueur();
+            if($_FILES['joueur_photo']['name'] != ''){
+                $photo = "resources/comptes/" . $_FILES['joueur_photo']['name'];
+            }else{
+                $photo=null;
+            }
+            $theJoueur=new Joueur($id, $nom, $prenom, $login, $photo);
+            $this->uploadPhotoJoueur();
 
-        if(empty($passwordActuel)){
-            $this->joueur_model->Modifier($theJoueur);
-//            $this->data['joueur']=$theJoueur;
-            $this->AfficherTableauBordJoueurConnecte($id);
-        } else{
-            $hash = $this->joueur_model->GetHashPassword($theJoueur->getJoueurLogin());
-            if(password_verify($passwordActuel, $hash)){
-                if($password==$passwordConfirm){
-                    $this->joueur_model->ModifierWithPassword($theJoueur, $password);
-                }
-                else{
-                    $this->data['error']="Vous n'avez pas mis les même mots de passe.";
+            if(empty($passwordActuel)){
+                $this->joueur_model->Modifier($theJoueur);
+                $this->AfficherTableauBordJoueurConnecte($id);
+            } else{
+                $hash = $this->joueur_model->GetHashPassword($theJoueur->getJoueurLogin());
+                if(password_verify($passwordActuel, $hash)){
+                    if($password==$passwordConfirm){
+                        $this->joueur_model->ModifierWithPassword($theJoueur, $password);
+                    }
+                    else{
+                        $this->data['error']="Vous n'avez pas mis les même mots de passe.";
+                        $this->AfficherSaisieModifierJoueur($id);
+                    }
+                } else{
+                    $this->data['error']="Le mot de passe n'est pas bon.";
                     $this->AfficherSaisieModifierJoueur($id);
                 }
-            } else{
-                $this->data['error']="Le mot de passe n'est pas bon.";
-                $this->AfficherSaisieModifierJoueur($id);
             }
         }
-
     }
 
     public function AfficherMonCompte($id){
@@ -141,12 +148,12 @@ class JoueurController
         $this->data['prenom']=$theJoueur->getJoueurPrenom();
         $this->data['login']=$theJoueur->getJoueurLogin();
         $this->data['photo']=$theJoueur->getJoueurPhoto();
-//        var_dump($this->joueur_model->GetHashPassword($theJoueur->getJoueurLogin()));
         $this->data['password']=$this->joueur_model->GetHashPassword($theJoueur->getJoueurLogin());
 
         require_once "Views/public/joueurs/moncompte.php";
 
     }
+
 
     public function AfficherSaisieModifierJoueur($id){
         $theJoueur=$this->joueur_model->GetJoueur($id);
@@ -165,7 +172,14 @@ class JoueurController
         $this->AfficherSaisieModifierJoueur($id);
     }
 
+    public function AfficherSaisieConnexion(){
+        $this->data['messageError']=null;
+        require_once "Views/public/joueurs/connexion.php";
+    }
 
-
+    public function AfficherSaisieCreateAccount(){
+        $this->data['messageError']=null;
+        require_once "Views/public/joueurs/createAccount.php";
+    }
 
 }

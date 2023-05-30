@@ -181,7 +181,6 @@ class UserModel extends DatabaseModel
         $res->bindParam(':id', $id);
         $res->execute();
         $line=$res->fetch();
-//        die(var_dump($line));
         if($line['user_statut'] == 'Admin'){
             $resultat = false;
         }

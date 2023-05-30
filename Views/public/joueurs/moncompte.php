@@ -35,3 +35,4 @@
     <input class="input-btn-ajouter center" type="submit" value="Modifier mon compte">
 
 </form>
+<?php require_once "Views/public/footer.php" ?>

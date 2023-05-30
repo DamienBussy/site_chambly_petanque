@@ -13,12 +13,12 @@ Class UserMail
             $mail->isSMTP();
             $mail->Host       = 'smtp-mail.outlook.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'damien.developper@outlook.fr';
-            $mail->Password   = 'CodeIsLife2001';
+            $mail->Username   = '********';
+            $mail->Password   = '***********';
             $mail->SMTPSecure = 'tls';
             $mail->Port       = 587;
 
-            $mail->setFrom('damien.developper@outlook.fr', 'Damien Dev');
+            $mail->setFrom('*******', 'Damien Dev');
             $mail->addAddress($destinataire);
 
             $mail->isHTML(true);

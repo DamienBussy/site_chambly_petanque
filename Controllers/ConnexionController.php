@@ -62,14 +62,12 @@ class ConnexionController
     public function ChangerPassword($idUserConnect, $passwordActuel, $newPassword, $newPasswordconfirme){
         $theUser=$this->user_model->GetUser($idUserConnect);
         $this->data['idUserConnect'] = $idUserConnect;
-//        var_dump("ok");
         $hashActuel = $this->user_model->GetHashPasswordById($idUserConnect);
         // Securité
         if(password_verify($passwordActuel, $hashActuel)){
             if($newPassword != $newPasswordconfirme){
                 $this->data['leMessageError'] = "Les saisies sont différentes";
                 require_once "Views/Admin/users/changemdp.php";
-//                header("Location: accueil.php?page=cnx_saisieChangerPassword");
             }
             else{
                 $code = uniqid();
@@ -79,28 +77,27 @@ class ConnexionController
                 $sujet="Changement de Mot de passe Espace Admin chambly petanque";
                 $message = "Bonjour,\n\n";
                 $message .= "Pour confirmer votre demande de changement de mot de passe, veuillez cliquer sur le lien ci-dessous :\n";
-                $message .= "http://localhost:7080/cp/accueil.php?page=mdp&id=".$idUserConnect."&code=".$code; // &id=".$idUserConnect."&code=".$code.
+                $message .= "http://localhost:7080/cp/accueil.php?page=mdp&id=".$idUserConnect."&code=".$code;
                 $message .= "\n\n";
                 $message .= "Ce lien sera valable pendant une heure.\n\n";
                 $message=utf8_decode($message);
-//                $mail = new UserMail();
-//                $mail->EnvoyerMail($destinataireMail, $sujet, $message);
-//                $this->data['leMessage']="Un mail vous a été envoyé, consultez-le et cliquez sur le lien de confirmation le changement de mot passe.";
+                $mail = new UserMail();
+                $mail->EnvoyerMail($destinataireMail, $sujet, $message);
+                $this->data['leMessage']="Un mail vous a été envoyé, consultez-le et cliquez sur le lien de confirmation le changement de mot passe.";
                 require_once "Views/Admin/users/changemdp.php";
             }
         }
         else{
             $this->data['leMessageError']="L'authentification avec votre mot de passe actuel n'est pas correcte.";
             require_once "Views/Admin/users/changemdp.php";
-//            header("Location: accueil.php?page=cnx_saisieChangerPassword");
         }
     }
+
     public function actionValidationChangementPassword($id, $code)
     {
         $password = $this->user_model->GetPasswordWithEmail($id);
         if (!is_null($password)) {
             $confirmation_email = $this->user_model->GetConfirmationEmailByUserId($id);
-            var_dump($confirmation_email['expiration_date']);
             if ($confirmation_email['expiration_date'] <= date('Y-m-d H:i:s') && $confirmation_email['code'] == $code) {
                 $this->user_model->ChangerPassword($password, $id);
                 $this->data['leMessage'] = "Votre mot de passe a été modifié avec succès.";

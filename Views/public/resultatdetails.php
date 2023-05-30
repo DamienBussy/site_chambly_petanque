@@ -77,12 +77,3 @@
 </section>
 
 <?php require_once "Views/public/footer.php" ?>
-<!-- Java Script
-================================================== -->
-<script src="js/jquery-3.5.0.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-
-</html>

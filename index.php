@@ -16,22 +16,7 @@ if (!empty($_POST['page']) || !empty($_GET['page']))
 
 }
 else{
-    if(empty($_SESSION['users'])){
-        $page="acc";
-    }
-    else{
-        if($_SESSION['users']->getUserStatut() == "Président"){
-            $page="men_menuAdmin";
-        }
-        else{
-            if($_SESSION['users']->getUserStatut() == "Admin"){
-                $page="men_menuAdmin";
-            }
-            else{
-                $page="acc";
-            }
-        }
-    }
+    $page="acc";
 }
 // On prend les 3 premiere lettre de $page pour connaitre notre direction
 $direction = substr($page, 0, 3);

@@ -22,9 +22,7 @@ class EventController
 
     public function AfficherTousLesEvents(){
         $theEvent = $this->event_model->GetEvents();
-
         $this->data['lesEvents']=$theEvent;
-
         $this->data['pathsImagePrincipale']=null;
         // On bind les paths dans les objet Event
         foreach ($theEvent as $evt){
@@ -32,7 +30,6 @@ class EventController
                 $evt->setPathImagePrincipale($this->image_model->getImagePrincipaleEvent($evt->getEventImagePrincipale())->getImagePath());
             }
         }
-
         require_once "Views/Admin/events/gestionEventsView.php";
     }
 

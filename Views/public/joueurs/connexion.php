@@ -59,7 +59,10 @@
     <input class="inputcreatecompte" type="password" id="joueur_password" name="joueur_password" required><br><br>
 
     <input class="inputcreatecompte" type="submit" value="Se Connecter">
+    <?php if(!is_null($this->data['messageError'])){?>
+        <p class="error-message"><?= $this->data['messageError'] ?></p>
+    <?php }   ?>
 </form>
 </body>
-</html>
 
+<?php require_once "Views/public/footer.php" ?>

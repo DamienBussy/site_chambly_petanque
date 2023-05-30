@@ -14,9 +14,7 @@ if (!empty($_POST['page']) || !empty($_GET['page']))
 else {
     $page = "acc";
 }
-//var_dump($page);
-//var_dump($_POST['page']);
-//var_dump($_GET['page']);
+
 // On prend les 3 premiere lettre de $page pour connaitre notre direction
 $direction = substr($page, 0, 3);
 $action=substr($page, 4);

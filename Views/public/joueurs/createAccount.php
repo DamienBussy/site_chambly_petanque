@@ -67,6 +67,10 @@
     <input class="inputcreatecompte" type="file" id="joueur_photo" name="joueur_photo" accept="image/*"><br><br>
 
     <input class="inputcreatecompte" type="submit" value="Créer le compte">
+    <?php if(isset($this->data['messageError'])){?>
+        <p class="error-message"><?= $this->data['messageError'] ?></p>
+    <?php }   ?>
 </form>
 </body>
 </html>
+<?php require_once "Views/public/footer.php" ?>

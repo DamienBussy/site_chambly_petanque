@@ -17,7 +17,9 @@ switch ($action){
         $controleur->AfficherToutesLesAnnonces();
     break;
     case "saisiecreateaccount":
-        require_once "Views/public/joueurs/createAccount.php";
+        require_once "Controllers/Admin/JoueurController.php";
+        $controleur=new JoueurController();
+        $controleur->AfficherSaisieCreateAccount();
     break;
     case "createaccount":
         require_once "Controllers/Admin/JoueurController.php";
@@ -25,7 +27,9 @@ switch ($action){
         $controleur->CreateAccount($_POST['joueur_nom'], $_POST['joueur_prenom'],$_POST['joueur_login'],$_POST['joueur_password']);
     break;
     case "saisieconnexion":
-        require_once "Views/public/joueurs/connexion.php";
+        require_once "Controllers/Admin/JoueurController.php";
+        $controleur=new JoueurController();
+        $controleur->AfficherSaisieConnexion();
     break;
     case "connexion":
         require_once "Controllers/Admin/JoueurController.php";

@@ -66,3 +66,5 @@
         <!-- END respond-->
 
     </div> <!-- end comment-respond -->
+
+<?php require_once "Views/public/footer.php" ?>

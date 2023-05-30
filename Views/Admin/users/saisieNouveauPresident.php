@@ -13,7 +13,7 @@
     <?php
         if($this->data['leMessageError'] != null){
     ?>
-            <p><?php echo $this->data['leMessageError']; ?><</p>
+            <p><?php echo $this->data['leMessageError']; ?></p>
     <?php
         }
     ?>

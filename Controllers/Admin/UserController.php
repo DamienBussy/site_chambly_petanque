@@ -83,9 +83,6 @@ class UserController
 
             $this->AfficherTousLesAdmin();
         }
-        else{
-            throw new Exception("Vous ne pouver pas supprimer le président.");
-        }
     }
 
     public function AfficherDegraderView($message){

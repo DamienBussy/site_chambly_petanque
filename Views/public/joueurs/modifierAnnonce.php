@@ -55,3 +55,4 @@
     <input class="inputcreatecompte" type="submit" value="Modifier l'annonce">
 </form>
 
+<?php require_once "Views/public/footer.php" ?>

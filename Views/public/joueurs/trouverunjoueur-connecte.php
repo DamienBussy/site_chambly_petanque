@@ -59,3 +59,5 @@
     <p class="msg-error">Aucune annonce de publié</p>
 <?php }
 
+     require_once "Views/public/footer.php";
+

@@ -1,5 +1,14 @@
 <!-- footer
 ================================================== -->
+<style>
+    .damien {
+        text-align: right;
+        margin-right: 20px; /* Tu peux ajuster la valeur selon tes besoins */
+        margin-top: -20px; /* Tu peux ajuster la valeur selon tes besoins */
+    }
+</style>
+
+
 <footer class="s-footer">
     <div class="s-footer__bottom">
         <div class="row">
@@ -17,6 +26,9 @@
             </a>
         </div> <!-- end ss-go-top -->
     </div> <!-- end s-footer__bottom -->
+    <div class="damien">
+        <span>© By Damien Bussy</span>
+    </div>
 
 </footer> <!-- end s-footer -->
 

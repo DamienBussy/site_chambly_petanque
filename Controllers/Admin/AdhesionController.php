@@ -48,13 +48,11 @@ class AdhesionController
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
             // Vérifie si le fichier est un fichier PDF
             if($imageFileType != "pdf") {
                 $messsageError="Seuls les fichiers PDF sont autorisés.";
                 $uploadOk = 0;
             }
-
             // Vérifie si le fichier a été téléchargé correctement
             if ($uploadOk == 0) {
                 $messsageError= "Le fichier n'a pas pu être téléchargé.";
