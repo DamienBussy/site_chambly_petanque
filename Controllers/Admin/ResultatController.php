@@ -9,6 +9,7 @@ use Models\ImageModel;
 require_once "Models/ImageModel.php";
 require_once "Models/ResultatModel.php";
 require_once "Models/EventModel.php";
+require_once "Controllers/Admin/LogController.php";
 
 /**
  * @property array $lesAnnees
@@ -20,12 +21,14 @@ class ResultatController
     private $image_model;
 
     private $event_model;
+    private $log;
 
     public function __construct(){
         $this->data=array();
         $this->resultat_model=new ResultatModel();
         $this->image_model=new ImageModel();
         $this->event_model=new EventModel();
+        $this->log=new LogController();
     }
 
     public function AfficherTousLesResultats(){
@@ -46,7 +49,10 @@ class ResultatController
     }
 
     public function SupprimerResultat($id){
+        $res=$this->resultat_model->GetResultat($id);
+        $titre=$res->getResultatTitle();
         $this->resultat_model->Supprimer($id);
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Suppression du résultat : ".$titre);
         header("Location: index.php?page=res_getAllResultats");
     }
 
@@ -58,7 +64,7 @@ class ResultatController
     public function AjouterResultat($resultat_title, $resultat_description, $resultat_date, $event_categorie, $resultat_annee){
         $theResultat = new Resultat(0, $resultat_title, $resultat_description, $resultat_date, null, $event_categorie, $resultat_annee);
         $this->resultat_model->Ajouter($theResultat);
-
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Ajout du résultat : ".$resultat_title);
         $this->AfficherTousLesResultats();
     }
 
@@ -78,7 +84,7 @@ class ResultatController
     public function ModifierResultat($id, $resultat_title, $resultat_description, $resultat_date, $resultat_categorie, $resultat_annee){
         $theResultat = new Resultat($id, $resultat_title, $resultat_description, $resultat_date, null, $resultat_categorie, $resultat_annee);
         $this->resultat_model->Modifier($theResultat);
-
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Modification du résultat : ".$resultat_title);
         $this->AfficherTousLesResultats();
     }
 

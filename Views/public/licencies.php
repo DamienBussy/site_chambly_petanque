@@ -46,9 +46,7 @@
     }
 </style>
 
-<form class="search-form" action="indexpublic.php" method="post">
-    <input type="hidden" name="page" value="lic_recherche" />
-
+<form class="search-form" action="indexpublic.php?page=lic_recherche" method="post">
     <select name="categ" id="categ">
         <option value="">-- Sélectionner une catégorie --</option>
         <option value="Benjamin">Benjamin</option>
@@ -94,7 +92,7 @@
                     <?php $path = $licencie->getLicenciePhoto(); ?>
                     <article class="brick entry" data-aos="fade-up">
                         <div class="entry__thumb">
-                            <a href="#licencie" class="thumb-link">
+                            <a href="indexpublic.php?page=lic_licencieDetails&id=<?= $licencie->getLicencieId() ?>" class="thumb-link">
                                 <img src="<?= $path ?>" alt="">
                             </a>
                         </div> <!-- end entry__thumb -->

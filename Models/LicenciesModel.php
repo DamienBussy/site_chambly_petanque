@@ -10,7 +10,7 @@ class LicenciesModel extends DatabaseModel
     public function GetLicencies(){
         $listeLicencies=array();
         $this->Connexion();
-        $req="select * from licencies order by licencie_nom desc"; // Le tri : du plus récent au plus ancien
+        $req="select * from licencies order by licencie_nom"; // Le tri : du plus récent au plus ancien
         $res=$this->GetDb()->prepare($req);
         $res->execute();
         // On récupère le résultat de la requête

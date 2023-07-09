@@ -142,6 +142,11 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .year-wrapper {
+        text-align: center;
+        background-color: #3397dc; /* Couleur de fond pour les années */
+        /* Autres styles si nécessaire */
+    }
 </style>
 <br><br><br>
 <h1>Coupe de France de Pétanque</h1>
@@ -152,10 +157,9 @@ if(count($arrEvents) != 0) {
     foreach ($arrEvents as $evt){
         ?>
         <div class="boxsimple">
-            <h2>À venir : <?php echo $evt->getEventTitle() ?></h2>
+            <h2>Le <?= $evt->getEventDate() ?> : <?php echo $evt->getEventTitle() ?></h2>
             <img src="<?= $evt->getPathImagePrincipale() ?>" alt="Image">
-            <form action="indexpublic.php" method="post">
-                <input type="hidden" name="page" value="evt_eventDetails" />
+            <form action="indexpublic.php?page=evt_eventDetails" method="post">
                 <input type="hidden" name="id" value="<?= $evt->getEventId() ?>" />
                 <input type="submit" value="Voir plus">
             </form>
@@ -166,17 +170,19 @@ if(count($arrEvents) != 0) {
     else{
     ?>
         <div class="box">
-            <h2>À venir :</h2>
             <div class="events">
                 <?php foreach ($arrEvents as $index => $evt) {
-                    $activeClass = ($index === 0) ? 'active' : ''; ?>
+                    $activeClass = ($index === 0) ? 'active' : '';
+                    ?>
+
                     <div class="event <?= $activeClass ?>">
+                        <h2>Le <?= $evt->getEventDate() ?> : <?= $evt->getEventTitle() ?></h2>
                         <img src="<?= $evt->getPathImagePrincipale() ?>" alt="Image">
-                        <form action="indexpublic.php" method="post">
-                            <input type="hidden" name="page" value="evt_eventDetails" />
-                            <input type="hidden" name="id" value="<?= $evt->getEventId() ?>" />
-                            <input type="submit" value="Voir plus">
-                        </form>
+                        <!--                        <label>--><?php //= $evt->getEventDescription() ?><!--</label>-->
+                        <!--                        <form action="indexpublic.php?page=evt_eventDetails" method="post">-->
+                        <!--                            <input type="hidden" name="id" value="--><?php //= $evt->getEventId() ?><!--" />-->
+                        <!--                            <input type="submit" value="Voir plus">-->
+                        <!--                        </form>-->
                     </div>
                 <?php } ?>
             </div>
@@ -184,8 +190,18 @@ if(count($arrEvents) != 0) {
             <div class="arrow right">&#9658;</div>
             <style>
                 .box h2 {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     font-size: 24px;
-                    margin-top: 20px;
+                    margin-top: -275px;
+                    margin-left: 860px;
+                    background-color: white;
+                    padding: 5px;
+                }
+
+                .box .event.active h2 {
+                    display: block;
                 }
             </style>
         </div>
@@ -193,29 +209,35 @@ if(count($arrEvents) != 0) {
         <script>
             // Ajout d'un gestionnaire d'événements pour les flèches gauche et droite
             var events = document.querySelectorAll('.box .event');
+            var titles = document.querySelectorAll('.box .event h2');
             var arrowLeft = document.querySelector('.box .arrow.left');
             var arrowRight = document.querySelector('.box .arrow.right');
             var currentIndex = 0;
 
             arrowLeft.addEventListener('click', function() {
                 events[currentIndex].classList.remove('active');
+                titles[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex === 0) ? events.length - 1 : currentIndex - 1;
                 events[currentIndex].classList.add('active');
+                titles[currentIndex].classList.add('active');
             });
+
             arrowRight.addEventListener('click', function() {
                 events[currentIndex].classList.remove('active');
+                titles[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex === events.length - 1) ? 0 : currentIndex + 1;
                 events[currentIndex].classList.add('active');
+                titles[currentIndex].classList.add('active');
             });
         </script>
     <?php } ?>
 <?php } ?>
 
-
-<?php //var_dump($this->data['lesResultats']); ?>
 <?php
 foreach ($this->data['lesResultats'] as $annee) { ?>
-    <h2>Saison <?php echo $annee[0]->getResultatAnnee() ?></h2>
+    <div class="year-wrapper">
+        <h2><?= $annee[0]->getResultatAnnee() ?></h2>
+    </div>
     <section class="s-content s-content--no-top-padding">
         <!-- masonry
         ================================================== -->
@@ -239,7 +261,7 @@ foreach ($this->data['lesResultats'] as $annee) { ?>
                         <!--                    --><?php //var_dump($path); ?>
                         <article class="brick entry" data-aos="fade-up">
                             <div class="entry__thumb">
-                                <a href="http://localhost:7080/cp/indexpublic.php?page=res_resultatDetails&id=<?= $resultat->getResultatId() ?>" class="thumb-link">
+                                <a href="indexpublic.php?page=res_resultatDetails&id=<?= $resultat->getResultatId() ?>" class="thumb-link">
                                     <img src="<?= $path ?>" alt="">
                                 </a>
                             </div> <!-- end entry__thumb -->

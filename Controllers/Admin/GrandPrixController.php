@@ -4,15 +4,18 @@ namespace Controllers\Admin;
 
 use Models\GrandPrixModel;
 require_once "Models/GrandPrixModel.php";
+require_once "Controllers/Admin/LogController.php";
 
 class GrandPrixController
 {
     private $data;
     private $gp_model;
+    private $log;
 
     public function __construct(){
         $this->data=array();
         $this->gp_model=new GrandPrixModel();
+        $this->log=new LogController();
     }
     public function AfficheGestionGrandPrix(){
         $affiche=$this->gp_model->GetAffiche();
@@ -47,6 +50,7 @@ class GrandPrixController
                     $this->data['messsageSucces']= "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé.";
                     $this->gp_model->truncateTable();
                     $this->gp_model->AjouterAffiche($_FILES["fileToUpload"]["name"]);
+                    $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Remplacement de l'affiche du grand prix.");
                 } else {
                     $this->data['messsageError']= "Une erreur est survenue lors du téléchargement du fichier.";
                 }

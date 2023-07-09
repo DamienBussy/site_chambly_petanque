@@ -1,6 +1,5 @@
 <?php require_once "utils/protection.php";?>
 <?php require_once "Views/Admin/menuAdminView.php";?>
-<!--<link rel="stylesheet" type="text/css" href="./css/styleUsers.css">-->
 <div class="button-container">
     <form action="index.php" method="post">
         <button class="button-ajout-users button-espace" type="submit" name="page" value="res_saisieAjout"><span>Ajouter un résultat</span></button>
@@ -10,7 +9,7 @@
 <table class="table-events">
     <thead class="th-users">
     <tr>
-        <th>ID</th>
+<!--        <th>ID</th>-->
         <th>Titre</th>
         <th>Description</th>
         <th>Date</th>
@@ -30,7 +29,7 @@
             ?>
 
             <tr class="tr-effet-ligne-user tr-effet-une-ligne-sur-deux">
-                <td class="td-users"><?= $resultat->getResultatId() ?></td>
+<!--                <td class="td-users">--><?php //= $resultat->getResultatId() ?><!--</td>-->
                 <td class="td-users"><?= $resultat->getResultatTitle() ?></td>
                 <td class="td-users"><?= $resultat->getResultatDescription() ?></td>
                 <td class="td-users"><?= $resultat->getResultatDate() ?></td>
@@ -76,9 +75,15 @@
                 <?php }
                 elseif ($resultat->getResultatCategorie() == 13){ ?>
                 <td class="td-users">National</td>
-                <?php } ?>
-                <?php if($resultat->getResultatCategorie() == 14){ ?>
+                <?php }
+                 elseif ($resultat->getResultatCategorie() == 14){ ?>
                     <td class="td-users">Concours</td>
+                <?php }
+                elseif ($resultat->getResultatCategorie() == 15){ ?>
+                    <td class="td-users">Championnats de Ligue</td>
+                <?php }
+                elseif ($resultat->getResultatCategorie() == 16){ ?>
+                    <td class="td-users">Championnats de France</td>
                 <?php } ?>
 
                 <td class="td-users">

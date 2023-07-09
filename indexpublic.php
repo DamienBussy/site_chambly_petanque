@@ -40,6 +40,15 @@ switch ($direction){
     case "jou":
         require_once "sousIndex/public/indexJoueurs.php";
     break;
+    case "eco":
+        require_once "sousIndex/public/indexEcole.php";
+    break;
+    case "par":
+        require_once "sousIndex/public/indexPartner.php";
+    break;
+    case "jco":
+        require_once "sousIndex/public/indexJoueurecole.php";
+    break;
     case "tmp":
         require_once "Views/public/accueil.php";
     break;

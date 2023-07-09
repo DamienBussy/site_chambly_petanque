@@ -22,7 +22,7 @@
     <?php
     if(!is_null($this->data['leFichierFICHEINSCRIPTION'])){ ?>
         <div class="button-container">
-            <form action="index.php" method="post">
+            <form action="index.php" method="post" target="_blank">
                 <button class="button-ajout-users button-espace" type="submit" name="page" value="adh_afficherFichierInscription"><span>Voir le fichier</span></button>
             </form>
         </div>
@@ -49,7 +49,7 @@
     <h3>Fichier Autorisation parental</h3>
     <?php if(!is_null($this->data['leFichierAUTORISATIONPARENTAl'])){ ?>
         <div class="button-container">
-            <form action="index.php" method="post">
+            <form action="index.php" method="post" target="_blank">
                 <button class="button-ajout-users button-espace" type="submit" name="page" value="adh_afficherFichierAutorisationParental"><span>Voir le fichier</span></button>
             </form>
         </div>
@@ -76,7 +76,7 @@
     <h3>Fichier Certificat médical</h3>
     <?php if(!is_null($this->data['leFichierCERTIFICATMEDICAL'])){ ?>
         <div class="button-container">
-            <form action="index.php" method="post">
+            <form action="index.php" method="post" target="_blank">
                 <button class="button-ajout-users button-espace" type="submit" name="page" value="adh_afficherFichierCertifMedical"><span>Voir le fichier</span></button>
             </form>
         </div>
@@ -103,7 +103,7 @@
     <h3>Fichier Tarif licencié</h3>
     <?php if(!is_null($this->data['leFichierTARIF'])){ ?>
         <div class="button-container">
-            <form action="index.php" method="post">
+            <form action="index.php" method="post" target="_blank">
                 <button class="button-ajout-users button-espace" type="submit" name="page" value="adh_afficherFichierTarifLicencie"><span>Voir le fichier</span></button>
             </form>
         </div>

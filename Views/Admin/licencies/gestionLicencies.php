@@ -6,9 +6,9 @@
         <button class="button-ajout-users button-espace" type="submit" name="page" value="lic_saisieAjouter"><span>Ajouter un Licencié</span></button>
     </form>
     <br>
-    <form action="index.php" method="post">
-        <button class="button-ajout-users button-espace" type="submit" name="page" value="lic_saisieUpload"><span>Renouveler les Licencié</span></button>
-    </form>
+<!--    <form action="index.php" method="post">-->
+<!--        <button class="button-ajout-users button-espace" type="submit" name="page" value="lic_saisieUpload"><span>Renouveler les Licencié</span></button>-->
+<!--    </form>-->
 </div>
 <br>
 

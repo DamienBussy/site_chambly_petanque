@@ -43,8 +43,7 @@
         background-color: #45a049;
     }
 </style>
-<form class="formcreatecompte" method="POST" action="indexpublic.php" enctype="multipart/form-data">
-    <input type="hidden" id="page" name="page" value="jou_createannonce">
+<form class="formcreatecompte" method="POST" action="indexpublic.php?page=jou_createannonce" enctype="multipart/form-data">
     <input type="hidden" id="joueur" name="joueur" value="<?= $_SESSION['joueurs']->getJoueurId() ?>">
     <label class="labelcreatecompte" for="title">Titre :</label>
     <input class="inputcreatecompte" type="text" id="title" name="title" required><br><br>

@@ -26,9 +26,6 @@
             </a>
         </div> <!-- end ss-go-top -->
     </div> <!-- end s-footer__bottom -->
-    <div class="damien">
-        <span>© By Damien Bussy</span>
-    </div>
 
 </footer> <!-- end s-footer -->
 

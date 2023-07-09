@@ -95,7 +95,7 @@ function sortMonths($a, $b)
 
                             <article class="brick entry" data-aos="fade-up">
                                 <div class="entry__thumb">
-                                    <a href="http://localhost:7080/cp/indexpublic.php?page=evt_eventDetails&id=<?= $event->getEventId() ?>" class="thumb-link">
+                                    <a href="indexpublic.php?page=evt_eventDetails&id=<?= $event->getEventId() ?>" class="thumb-link">
                                         <img src="<?= $path ?>" alt="">
                                     </a>
                                 </div> <!-- end entry__thumb -->

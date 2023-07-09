@@ -10,7 +10,7 @@
 <table class="table-users">
     <thead class="th-users">
     <tr>
-        <th>ID</th>
+<!--        <th>ID</th>-->
         <th>Nom</th>
         <th>Prénom</th>
         <th>Email</th>
@@ -22,7 +22,7 @@
     <tbody>
     <?php foreach ($this->data['lesAdmin'] as $admin){ ?>
         <tr class="tr-effet-ligne-user tr-effet-une-ligne-sur-deux tr-couleur-gold-president">
-            <td class="td-users"><?= $admin->getUserId() ?></td>
+<!--            <td class="td-users">--><?php //= $admin->getUserId() ?><!--</td>-->
             <td class="td-users"><?= $admin->getUserLastname() ?></td>
             <td class="td-users"><?= $admin->getUserFirstName() ?></td>
             <td class="td-users"><?= $admin->getUserEmail() ?></td>

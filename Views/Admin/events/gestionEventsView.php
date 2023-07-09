@@ -10,7 +10,7 @@
 <table class="table-events">
     <thead class="th-users">
     <tr>
-        <th>ID</th>
+<!--        <th>ID</th>-->
         <th>Titre</th>
         <th>Description</th>
         <th>Date</th>
@@ -25,7 +25,7 @@
     <tbody>
     <?php foreach ($this->data['lesEvents'] as $event){ ?>
         <tr class="tr-effet-ligne-user tr-effet-une-ligne-sur-deux">
-            <td class="td-users"><?= $event->getEventId() ?></td>
+<!--            <td class="td-users">--><?php //= $event->getEventId() ?><!--</td>-->
             <td class="td-users"><?= $event->getEventTitle() ?></td>
             <td class="td-users"><?= $event->getEventDescription() ?></td>
             <td class="td-users"><?= $event->getEventDate() ?></td>

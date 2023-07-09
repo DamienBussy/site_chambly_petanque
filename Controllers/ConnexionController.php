@@ -70,20 +70,23 @@ class ConnexionController
                 require_once "Views/Admin/users/changemdp.php";
             }
             else{
-                $code = uniqid();
-                $this->user_model->ConfirmerByEmail($idUserConnect, $code, $newPassword);
+//                $code = uniqid();
+//                $this->user_model->ConfirmerByEmail($idUserConnect, $code, $newPassword);
                 // Envoie de l'email
-                $destinataireMail = $theUser->getUserEmail();
-                $sujet="Changement de Mot de passe Espace Admin chambly petanque";
-                $message = "Bonjour,\n\n";
-                $message .= "Pour confirmer votre demande de changement de mot de passe, veuillez cliquer sur le lien ci-dessous :\n";
-                $message .= "http://localhost:7080/cp/accueil.php?page=mdp&id=".$idUserConnect."&code=".$code;
-                $message .= "\n\n";
-                $message .= "Ce lien sera valable pendant une heure.\n\n";
-                $message=utf8_decode($message);
-                $mail = new UserMail();
-                $mail->EnvoyerMail($destinataireMail, $sujet, $message);
-                $this->data['leMessage']="Un mail vous a été envoyé, consultez-le et cliquez sur le lien de confirmation le changement de mot passe.";
+//                $destinataireMail = $theUser->getUserEmail();
+//                $sujet="Changement de Mot de passe Espace Admin chambly petanque";
+//                $message = "Bonjour,\n\n";
+//                $message .= "Pour confirmer votre demande de changement de mot de passe, veuillez cliquer sur le lien ci-dessous :\n";
+//                $message .= "http://localhost:7080/cp/accueil.php?page=mdp&id=".$idUserConnect."&code=".$code;
+//                $message .= "\n\n";
+//                $message .= "Ce lien sera valable pendant une heure.\n\n";
+//                $message=utf8_decode($message);
+//                $mail = new UserMail();
+//                $mail->EnvoyerMail($destinataireMail, $sujet, $message);
+//                $this->data['leMessage']="Un mail vous a été envoyé, consultez-le et cliquez sur le lien de confirmation le changement de mot passe.";
+                $hash=password_hash($newPassword, PASSWORD_BCRYPT);
+                $this->user_model->ChangerPassword($hash, $idUserConnect);
+                $this->data['leMessage'] = "Votre mot de passe a été modifié avec succès.";
                 require_once "Views/Admin/users/changemdp.php";
             }
         }

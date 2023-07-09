@@ -4,19 +4,20 @@ namespace Controllers\Admin;
 
 use Licencie;
 use Models\LicenciesModel;
-use PHPExcel_Autoloader;
-use PHPExcel_IOFactory;
 
 require_once "Models/LicenciesModel.php";
+require_once "Controllers/Admin/LogController.php";
 
 class LicencieController
 {
     private $data;
     private $licencie_model;
+    private $log;
 
     public function __construct(){
         $this->data=array();
         $this->licencie_model=new LicenciesModel();
+        $this->log=new LogController();
     }
 
     public function AfficherTousLesLicencies(){
@@ -36,6 +37,7 @@ class LicencieController
 
         $theLicencie=new Licencie($id, $nom, $prenom, $statut, $categ, $classe, $image_path);
         $this->uploadImageLicencie();
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Ajout du licencié : ". $id. ", ". $nom. ", ". $prenom . ", ". $statut. ", ". $categ. ", ". $classe);
         $this->licencie_model->Ajouter($theLicencie);
         $this->AfficherTousLesLicencies();
     }
@@ -78,6 +80,7 @@ class LicencieController
         }
         $theLicencie=new Licencie($id, $nom, $prenom, $statut, $categ, $classe, $image_path);
         $this->uploadImageLicencie();
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Modification du licencié : ". $id. ", ". $nom. ", ". $prenom . ", ". $statut. ", ". $categ. ", ". $classe);
         $this->licencie_model->Modifier($idCourant, $theLicencie);
         $this->AfficherTousLesLicencies();
     }
@@ -90,11 +93,14 @@ class LicencieController
 
     public function SupprimerPhoto($idCourant){
         $theLicencie=$this->licencie_model->GetLicencie($idCourant);
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Suppression de la photo du licencié : ". $theLicencie->getLicenciePrenom(). ", ". $theLicencie->getLicenciePrenom());
         $this->licencie_model->SupprimerPhoto($theLicencie);
         $this->AfficherSaisieModifierLicencie($idCourant);
     }
 
     public function SupprimerLicencie($id_licencie){
+        $theLicencie=$this->licencie_model->GetLicencie($id_licencie);
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Suppression du licencié : ". $theLicencie->getLicenciePrenom(). ", ". $theLicencie->getLicenciePrenom());
         $this->licencie_model->Supprimer($id_licencie);
         $this->AfficherTousLesLicencies();
     }
@@ -264,6 +270,11 @@ class LicencieController
         }
 
         require_once "Views/public/licencies.php";
+    }
+
+    public function AfficherLicencieDetails($id){
+        $this->data['theLicencie']=$this->licencie_model->GetLicencie($id);
+        require_once "Views/public/licencieDetails.php";
     }
 
 

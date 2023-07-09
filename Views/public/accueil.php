@@ -46,18 +46,6 @@
 
                 <div class="row s-hero__slide-content animate-this">
                     <div class="column">
-                        <div class="s-hero__slide-meta">
-                            <span class="cat-links">
-                                <a href="#0">Health</a>
-                                <a href="#0">Lifestyle</a>
-                            </span>
-                            <span class="byline"> 
-                                Posted by 
-                                <span class="author">
-                                    <a href="#0">Jane Doe</a>
-                                </span>
-                            </span>
-                        </div>
                         <h1 class="s-hero__slide-text">
                             <a href="#0">
                                 Chambly Pétanque

@@ -29,9 +29,9 @@
     <label class="label-ajout-event" for="categ">Catégorie :</label>
     <select name="categ" id="categ" required>
         <option value="">-- Sélectionner la catégorie --</option>
-        <option value="Benjamin"></option>
+        <option value="Benjamin">Benjamin</option>
         <option value="Minime">Minime</option>
-        <option value="Cadet">Benjamin</option>
+        <option value="Cadet">Cadet</option>
         <option value="Junior">Junior</option>
         <option value="Sénior">Sénior</option>
         <option value="Vétéran">Vétéran</option>

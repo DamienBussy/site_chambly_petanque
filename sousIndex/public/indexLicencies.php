@@ -19,5 +19,10 @@ switch ($action){
         $controleur=new LicencieController();
         $controleur->RechercherLicencie($_POST['categ'], $_POST['q'], $_POST['classe']);
     break;
+    case "licencieDetails":
+        require_once "Controllers/Admin/LicencieController.php";
+        $controleur=new LicencieController();
+        $controleur->AfficherLicencieDetails($_GET['id']);
+    break;
 
 }

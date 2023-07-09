@@ -29,6 +29,8 @@
         <option value="12">Championnat de l'Oise Tir de précision</option>
         <option value="13">National</option>
         <option value="14">Concours</option>
+        <option value="15">Championnats de Ligue</option>
+        <option value="16">Championnats de France</option>
     </select><br><br>
     <label class="label-ajout-event" for="date">Année :</label>
     <input class="input-ajout-event" type="text" name="annee" id="annee" required><br><br>

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
 <?php require_once "Views/public/menu.php"?>
 <?php $resultat = $this->data['leResultat'] ?>
 <section class="s-content">

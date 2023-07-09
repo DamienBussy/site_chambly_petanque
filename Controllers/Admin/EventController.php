@@ -7,6 +7,7 @@ use Models\EventModel;
 use Models\ImageModel;
 require_once "Models/ImageModel.php";
 require_once "Models/EventModel.php";
+require_once "Controllers/Admin/LogController.php";
 
 class EventController
 {
@@ -14,10 +15,13 @@ class EventController
     private $event_model;
     private $image_model;
 
+    private $log;
+
     public function __construct(){
         $this->data=array();
         $this->event_model=new EventModel();
         $this->image_model=new ImageModel();
+        $this->log= new LogController();
     }
 
     public function AfficherTousLesEvents(){
@@ -40,7 +44,7 @@ class EventController
     public function AjouterEvent($event_title, $event_description, $event_date, $event_lieu, $event_heureDebut, $event_heureFin, $event_categorie){
         $theEvent = new Event(0, $event_title, $event_description, $event_date, $event_lieu, $event_heureDebut, $event_heureFin, null, $event_categorie);
         $this->event_model->Ajouter($theEvent);
-
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Ajout de l'évènement : ".$event_title);
         $this->AfficherTousLesEvents();
     }
 
@@ -62,12 +66,15 @@ class EventController
     public function ModifierEvent($id, $event_title, $event_description, $event_date, $event_lieu, $event_heureDebut, $event_heureFin, $event_categorie){
         $theEvent = new Event($id, $event_title, $event_description, $event_date, $event_lieu, $event_heureDebut, $event_heureFin, null, $event_categorie);
         $this->event_model->Modifier($theEvent);
-
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Modification de l'évènement : ".$event_title);
         $this->AfficherTousLesEvents();
     }
 
     public function SupprimerEvent($id){
+        $evt=$this->event_model->GetEvent($id);
+        $titre=$evt->getEventTitle();
         $this->event_model->Supprimer($id);
+        $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Suppression de l'évènement : ".$titre);
         header("Location: index.php?page=evt_getAllEvents");
     }
 
@@ -130,6 +137,7 @@ class EventController
         if(!is_null($theEvent->getEventImagePrincipale())){
             $theEvent->setPathImagePrincipale($this->image_model->getImagePrincipaleEvent($theEvent->getEventImagePrincipale())->getImagePath());
         }
+        $this->data['images']=$this->image_model->getImagesByEvent($id);
         $this->data['theEvent']=$theEvent;
         require_once "Views/public/eventdetails.php";
     }

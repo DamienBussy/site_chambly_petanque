@@ -29,6 +29,8 @@
         <option value="12" <?php if ($this->data['categ'] == 12) { echo "selected"; } ?>>Championnat de l'Oise Tir de précision</option>
         <option value="13" <?php if ($this->data['categ'] == 13) { echo "selected"; } ?>>National</option>
         <option value="14" <?php if ($this->data['categ'] == 14) { echo "selected"; } ?>>Concours</option>
+        <option value="15" <?php if ($this->data['categ'] == 15) { echo "selected"; } ?>>Championnats de Ligue</option>
+        <option value="16" <?php if ($this->data['categ'] == 16) { echo "selected"; } ?>>Championnats de France</option>
     </select><br><br>
 
     <label class="label-ajout-event" for="annee">Année :</label>

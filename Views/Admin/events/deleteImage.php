@@ -1,18 +1,18 @@
-<?php require_once "Views/Admin/events/menuEventImages.php"?>
+<?php require_once "Views/Admin/ecole/menuEcoleImages.php"?>
 
 <table>
 <?php
     $count = 0; // initialisation du compteur
-    foreach ($this->data['images'] as $image){
+    foreach ($this->data['lesPhotos'] as $image){
         if($count % 4 == 0){ // si le compteur est un multiple de 4
             echo "<tr>"; // on commence une nouvelle ligne
         }
         ?>
         <td>
             <form action="index.php" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ?')" style="display: inline-block;">
-                <input type="hidden" name="id_event" value="<?= $this->data['id_event'] ?>" />
+                <input type="hidden" name="id_ecole" value="<?= $this->data['id_ecole'] ?>" />
                 <input type="hidden" name="id" value="<?= $image->getImageId() ?>" />
-                <input type="hidden" name="page" value="evt_deleteImage" />
+                <input type="hidden" name="page" value="eco_deleteImage" />
                 <img src="<?= $image->getImagePath() ?>" class="image-event-size">
                 <br>
                 <input class="btn-delete-users" type="submit" value="Supprimer" />

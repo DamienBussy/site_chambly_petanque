@@ -49,7 +49,7 @@
 <header class="s-header">
 
     <!--        <div class="s-header__logo">-->
-    <a href="http://localhost:7080/cp/indexpublic.php?acc">
+    <a href="indexpublic.php?acc">
         <img src="Views/public/images/logo-club.jpg" alt="Homepage" class="taille-logo">
     </a>
     <!--        </div>-->
@@ -62,35 +62,42 @@
 
                 <ul class="s-header__nav">
                     <form method="post" action="indexpublic.php">
-                        <li class="current"><a href="http://localhost:7080/cp/indexpublic.php?acc_accueilView" title="Home">Home</a></li>
+<!--                        <li class="current"><a href="indexpublic.php?acc_accueilView" title="Accueil">Accueil</a></li>-->
                         <li class="has-children">
                             <a href="#0" title="">Le Club</a>
                             <ul class="sub-menu">
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=lic_licencies">Nos licenciés</a></li>
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=adh_inscription">Inscription</a></li>
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=lic_compositionbureau">Composition du bureau</a></li>
+                                <li><a href="indexpublic.php?page=lic_licencies">Nos licenciés</a></li>
+                                <li><a href="indexpublic.php?page=adh_inscription">Inscription</a></li>
+                                <li><a href="indexpublic.php?page=lic_compositionbureau">Composition du bureau</a></li>
                             </ul>
                         </li>
-                        <li class="current"><span><a href="http://localhost:7080/cp/indexpublic.php?page=grp_affiche" title="Grand Prix">Grand Prix</a></span></li>
-                        <li class="current"><a href="http://localhost:7080/cp/indexpublic.php?page=evt_getAllEvents" title="Nos évènements">Evènements</a></li>
-                        <li class="current"><a href="http://localhost:7080/cp/indexpublic.php?page=res_getAllResultats" title="Résultats">Résultats</a></li>
+                        <li class="current"><span><a href="indexpublic.php?page=grp_affiche" title="Affiche du Grand Prix">Grand Prix</a></span></li>
+                        <li class="current"><a href="indexpublic.php?page=evt_getAllEvents" title="Nos évènements">Evènements</a></li>
+                        <li class="current"><a href="indexpublic.php?page=res_getAllResultats" title="Les résultats du club">Résultats</a></li>
                         <li class="has-children">
                             <a>Coupe de france</a>
                             <ul class="sub-menu">
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=res_getAllResultatsCPFP">Pétanque</a></li>
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=res_getAllResultatsCPFJP">Jeu Provencal</a></li>
+                                <li><a href="indexpublic.php?page=res_getAllResultatsCPFP">Pétanque</a></li>
+                                <li><a href="indexpublic.php?page=res_getAllResultatsCPFJP">Jeu Provencal</a></li>
                             </ul>
                         </li>
                         <li class="has-children">
                             <a href="#0" title="">Championnat des clubs</a>
                             <ul class="sub-menu">
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=res_getAllResultatsChampClubP">Pétanque</a></li>
-                                <li><a href="http://localhost:7080/cp/indexpublic.php?page=res_getAllResultatsChampClubJP">Jeu Provencal</a></li>
+                                <li><a href="indexpublic.php?page=res_getAllResultatsChampClubP">Pétanque</a></li>
+                                <li><a href="indexpublic.php?page=res_getAllResultatsChampClubJP">Jeu Provencal</a></li>
                             </ul>
                         </li>
-
-                        <li><a href="http://ffpjp-comite-oise-petanque.e-monsite.com/pages/calendrier-veterans/" title="">Calendrier</a></li>
-                        <li><a href="http://localhost:7080/cp/indexpublic.php?page=jou_trouverjoueur" title="">Trouver un joueur</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Ecole de Pétanque</a>
+                            <ul class="sub-menu">
+                                <li><a href="indexpublic.php?page=eco_afficher">Les Cours</a></li>
+                                <li><a href="indexpublic.php?page=jco_afficher">Nos Joueurs</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://ffpjp-comite-oise-petanque.e-monsite.com/pages/calendrier-veterans/" title="Calendrier Comité Oise Pétanque">Calendrier</a></li>
+                        <li><a href="indexpublic.php?page=par_afficher" title="Sponsors">Nos Sponsors</a></li>
+                        <li><a href="indexpublic.php?page=jou_trouverjoueur" title="Trouver une équipe pour un concours, championnat, ...">Trouver une équipe</a></li>
                     </form>
                 </ul> <!-- end s-header__nav -->
 

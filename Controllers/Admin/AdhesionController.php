@@ -3,14 +3,17 @@
 namespace Controllers\Admin;
 use Models\AdhesionModel;
 require_once "Models/AdhesionModel.php";
+require_once "Controllers/Admin/LogController.php";
 class AdhesionController
 {
     private $data;
     private $fichier_model;
+    private $log;
 
     public function __construct(){
         $this->data=array();
         $this->fichier_model=new AdhesionModel();
+        $this->log=new LogController();
     }
     public function AfficheGestionInscription(){
         $this->data['messsageError1']=null;
@@ -60,6 +63,7 @@ class AdhesionController
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                     $messsageSucces= "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été téléchargé.";
                     $this->fichier_model->AjouterFichier($_FILES["fileToUpload"]["name"], $id);
+                    $this->log->AjouterLogs($_SESSION['users']->getUserEmail(), "Remplacement d'un fichier de la page inscription.");
                 } else {
                     $messsageError= "Une erreur est survenue lors du téléchargement du fichier.";
                 }

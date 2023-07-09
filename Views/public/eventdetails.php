@@ -56,6 +56,43 @@
 
                     </div>
                 </div> <!-- end s-content__primary -->
+                <h2>Galerie</h2>
+                <style>
+                    .galleryresdtl {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    .gallery-itemresdtl {
+                        margin: 10px;
+                        width: 200px;
+                        height: 200px;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                        transition: all 0.3s ease;
+                        border: 2px solid #ccc;
+                    }
+
+                    .gallery-itemresdtl:hover {
+                        transform: scale(1.1);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                        border: 2px solid #fff;
+                    }
+                </style>
+                <div class="galleryresdtl">
+                    <?php foreach ($this->data['images'] as $image) { ?>
+                        <div class="gallery-itemresdtl">
+                            <a href="<?= $image->getImagePath() ?>" target="_blank">
+                                <img src="<?= $image->getImagePath() ?>">
+                            </a>
+                        </div>
+                    <?php } ?>
+                </div>
+
+                <?php if(empty($this->data['images'])){ ?>
+                    <p class="msg-error">Vous n'avez aucune image pour ce résultat.</p>
+                <?php   } ?>
             </article> <!-- end entry -->
 
         </div> <!-- end column -->

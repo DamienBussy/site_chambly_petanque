@@ -9,7 +9,7 @@
     <form method="post" action="index.php">
         <ul>
             <li><button type="submit" name="page" value="cnx_pageCnx">Connexion</button></li>
-            <li><button type="submit" name="page" value="tmp">TEMPLATE</button></li>
+            <li><button type="submit" name="page" value="tmp">Vers le site</button></li>
         </ul>
     </form>
 </div>

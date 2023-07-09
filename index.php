@@ -1,5 +1,6 @@
 <?php
 
+use Controllers\Admin\LogController;
 use Controllers\ConnexionController;
 
 require_once "Entities/User.php";
@@ -55,7 +56,20 @@ switch ($direction){
     case "adh":
         require_once "sousIndex/indexAdhesion.php";
     break;
-
+    case "log":
+        require_once "Controllers/Admin/LogController.php";
+        $controller=new LogController();
+        $controller->AfficherTousLesLogs();
+    break;
+    case "eco":
+        require_once "sousIndex/indexEcole.php";
+    break;
+    case "par":
+        require_once "sousIndex/indexPartner.php";
+    break;
+    case "jcl":
+        require_once "sousIndex/indexJoueurecole.php";
+    break;
     // ------------------------------------------------ PUBLIC ----------------------------------------------
     case "tmp":
         require_once "indexpublic.php";

@@ -2,7 +2,6 @@
 
 namespace Models;
 
-use ExceptionConnexion;
 use PDO;
 use Event;
 require_once "Entities/Event.php";
